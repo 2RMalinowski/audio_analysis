@@ -2,6 +2,7 @@ from scipy.io import wavfile
 import matplotlib.pyplot as plt
 import os
 
+
 def open_wav_files_from(path):
     file_type_list = []
     file_list = os.listdir(path)
@@ -9,7 +10,6 @@ def open_wav_files_from(path):
         if file.endswith('.wav'):
             file_type_list.append(file)
     return file_type_list
-
 
 
 print(open_wav_files_from('/home/robb/Code/audio_analysis/'))
@@ -28,8 +28,4 @@ plt.title('nan-ai-file-2.wav')
 plt.subplot(313)
 plt.plot(z)
 plt.title('nan-ai-file-3.wav')
-plt.show()
 plt.savefig('waveforms.png')
-    
-
-plt.plot(data)
