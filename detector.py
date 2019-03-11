@@ -1,6 +1,7 @@
 import sys
 
 import operations
+import storage
 import ui
 
 
@@ -9,7 +10,7 @@ def choose_options_menu():
     if user_choice == 'd':
         operations.detect_broken_record(files_list)
     elif user_choice == 'g':
-        operations.save_waveforms_from(files_list)
+        operations.save_waveforms_from(storage.open_wav_files_from())
     elif user_choice == 'q':
         sys.exit()
     else:
@@ -18,7 +19,7 @@ def choose_options_menu():
 
 def display_menu():
     menu_commands = ['detect broken records',
-                     'generate waveform',
+                     'generate waveform png',
                      'quit']
     ui.display_program_menu(menu_commands)
 
