@@ -6,12 +6,14 @@ import ui
 
 
 def detect_broken_record_from(file_list):
+    # variable for exemplary condition
+    difference = abs(previous_sample_value - next_sample_value)
     for file in file_list:
         fs, data = wavfile.read(file)
-        #  if condition:
-        ui.display_message(f'{file} invalid {index_of_first_dropped_sample}')
-        #  else:
-        ui.display_message(f'{file} valid')
+        if round(difference) = previous_sample_value:  # exemplary condition
+            ui.display_message(f'{file} invalid {index_of_first_dropped_sample}')
+        else:
+            ui.display_message(f'{file} valid')
 
 
 def save_waveforms_from(file_list):
