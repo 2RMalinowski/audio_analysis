@@ -4,17 +4,21 @@ import matplotlib.pyplot as plt
 import storage
 
 
-def detect_broken_record_from(file_list):
-    pass
+# def detect_broken_record_from(file_list):
+#     for file in file_list:
+
+#     pass
 
 
 def save_waveforms_from(file_list):
-    n = 1
-    data = f'data{n}'
+    nrows = len(file_list)
+    ncols = 1
+    index = 1
+    data = f'data{index}'
     for file in file_list:
         fs, data = wavfile.read(file)
-        plt.subplot(f'{len(file_list)}1{n}')
+        plt.subplot(f'{nrows}{ncols}{index}')
         plt.plot(data)
         plt.title(file)
-        n += 1
+        index += 1
     plt.savefig('waveforms.png')
