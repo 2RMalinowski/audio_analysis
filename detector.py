@@ -8,7 +8,7 @@ import ui
 def choose_options_menu():
     user_choice = input('Your choice: ')
     if user_choice == 'd':
-        operations.detect_broken_record(files_list)
+        operations.detect_broken_record(storage.open_wav_files_from())
     elif user_choice == 'g':
         operations.save_waveforms_from(storage.open_wav_files_from())
     elif user_choice == 'q':
